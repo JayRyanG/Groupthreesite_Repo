@@ -1,0 +1,23 @@
+{% extends "layout/base.html" %}
+
+{% block 'title' %} Delete Add Gender Page {% endblock 'title' %}
+
+{% block 'content' %}
+{% include "include/Sidebar.html" %}
+{% include "include/ToastMessage.html" %}
+
+<div class="p-2 sm:ml-64 mt-16 md:mt-14">
+    <form action="/gender/delete/{{ gender.gender_id }}"method="post">
+        {% csrf_token %}
+        <div class="mx-auto w-full md:w-1/3 mb-2">
+            <label for="gender" class="block text-sm font-medium mb-2">Gender</label>
+            <input type="text" class="bg-white mb-2 px-3 py-2.5 border border-gray-300 text-black block text-sm rounded-sm w-full focus:outline-none focus:ring-blue-600 focus:border-blue-600" name="gender" id="gender" value="{{ gender.gender }}" />
+            <div class="flex-justify-end">
+                <a href="/gender/list" class="bg-white text-sm font-medium text-black px-3 py-2.5 mr-1 rounded-sm shadow-sm cursor-pointer hover:bg-gray-100 hover:outline-none">Back</a>
+                <button type="submit" class="bg-red-600  text-sm font medium text-white px-3 py-2.5 rounded-sm shadow-sm cursor-pointer hover:bg-red-700 hover:outline-none">Delete Gender</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock 'content' %}
