@@ -1,0 +1,33 @@
+{% extends "layout/base.html" %}
+
+{% block 'title' %}
+Gender List
+{% endblock 'title' %}
+
+{% block 'content' %}
+
+{% include "include/Sidebar.html" %}
+{% include "include/ToastMessage.html" %}
+
+<div class="p-2 sm:ml-64 mt-16 md:mt-14">
+    <div class="relative overflow-x-auto">
+        <table class="w-full">
+            <thead class="text-xs text-left text-white bg-blue-600">
+                <tr>
+                    <th class="px-6 py-3">Gender</th>
+                    <th class="px-6 py-3">Action</th>
+                </tr>
+            </thead>
+            <tbody class="text-xs text-black">
+                {% for gender in genders %}
+                    <tr class="hover: bg-gray-100 border-b border-gray-200">
+                        <td class="px-6 py-3">{{ gender.gender }}</td>
+                        <td class="px-6 py-3"></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock 'content' %}

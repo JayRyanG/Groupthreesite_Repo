@@ -3,7 +3,8 @@
 {% block 'title' %} Add Gender Page {% endblock 'title' %}
 
 {% block 'content' %}
-{% include "include/sidebar.html" %}
+{% include "include/Sidebar.html" %}
+{% include "include/ToastMessage.html" %}
 
 <div class="p-2 sm:ml-64 mt-16 md:mt-14">
     <form action="/gender/add"method="post">
