@@ -5,8 +5,8 @@ from .models import Genders
 # Create your views here.
 def add_gender(request):
     try:
-        if request.method == 'post':
-            gender= request.POSTg.get('gender')
+        if request.method == 'POST':
+            gender= request.POST.get('gender')
             Genders.objects.create(gender=gender).save()
             return HttpResponse('gender added successfully!')
         else:
